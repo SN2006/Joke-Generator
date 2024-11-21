@@ -18,11 +18,21 @@ public class Constants {
     public static final String FACT_MENU =
             """
             
-            -----------------------------
+            -----------------------------------------------
             Select which type of fact you want to generate:
             1 - About cats
             0 - Return
-            -----------------------------
+            -----------------------------------------------
+            """;
+
+    public static final String JOKE_HISTORY_MENU =
+            """
+            
+            -----------------------------------------------
+            You are in joke history menu. Select an action:
+            1 - Show last 5 jokes
+            0 - Return
+            -----------------------------------------------
             """;
 
     public static final String SELECT_MENU_MENU =
@@ -32,6 +42,7 @@ public class Constants {
             Select what do you want to generate:
             1 - Jokes
             2 - Facts
+            3 - Joke history
             0 - Close console
             ------------------------------------
             """;

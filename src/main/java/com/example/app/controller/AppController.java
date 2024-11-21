@@ -23,6 +23,19 @@ public class AppController {
             switch (commandId){
                 case 1 -> jokesGeneratorMenu();
                 case 2 -> factsGeneratorMenu();
+                case 3 -> historyMenu();
+                case 0 -> isRunning = false;
+                default -> view.display(Constants.INVALID_COMMAND_MSG);
+            }
+        }
+    }
+
+    private void historyMenu() {
+        boolean isRunning = true;
+        while (isRunning){
+            int commandId = view.getInt(Constants.JOKE_HISTORY_MENU);
+            switch (commandId){
+                case 1 -> view.display(model.getJokes());
                 case 0 -> isRunning = false;
                 default -> view.display(Constants.INVALID_COMMAND_MSG);
             }
