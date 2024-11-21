@@ -1,7 +1,5 @@
 package com.example.app.view;
 
-import com.example.app.util.Constants;
-
 import java.util.Scanner;
 
 public class AppView {
@@ -12,8 +10,8 @@ public class AppView {
         System.out.println(message);
     }
 
-    public int getChoose(){
-        System.out.println(Constants.MENU);
+    public int getInt(String message){
+        System.out.print(message);
         return IN.nextInt();
     }
 

@@ -18,8 +18,40 @@ public class AppController {
 
     public void run(){
         boolean isRunning = true;
+        while(isRunning){
+            int commandId = view.getInt(Constants.SELECT_MENU_MENU);
+            switch (commandId){
+                case 1 -> jokesGeneratorMenu();
+                case 2 -> factsGeneratorMenu();
+                case 0 -> isRunning = false;
+                default -> view.display(Constants.INVALID_COMMAND_MSG);
+            }
+        }
+    }
+
+    private void factsGeneratorMenu(){
+        boolean isRunning = true;
         while (isRunning){
-            int commandId = view.getChoose();
+            int commandId = view.getInt(Constants.FACT_MENU);
+            try{
+                switch (commandId){
+                    case 1 ->
+                        view.display(
+                                model.getCatFact().toString()
+                        );
+                    case 0 -> isRunning = false;
+                    default -> view.display(Constants.INVALID_COMMAND_MSG);
+                }
+            }catch (IOException | InterruptedException e){
+                view.display(Constants.SMTH_WRONG_MSG);
+            }
+        }
+    }
+
+    private void jokesGeneratorMenu(){
+        boolean isRunning = true;
+        while (isRunning){
+            int commandId = view.getInt(Constants.JOKE_MENU);
             try{
                 switch (commandId){
                     case 1 ->
