@@ -34,6 +34,10 @@ public class AppController {
                             view.display(model
                                     .getJokeByCategory(Constants.PUN_CATEGORY)
                                     .toString());
+                    case 4 ->
+                            view.display(model
+                                    .getJokeByCategory(Constants.MISCELLANEOUS_CATEGORY)
+                                    .toString());
                     case 0 -> isRunning = false;
                     default -> view.display(Constants.INVALID_COMMAND_MSG);
                 }
