@@ -1,5 +1,6 @@
 package com.example.app.model;
 
+import com.example.app.entity.Fact;
 import com.example.app.entity.Joke;
 
 import java.io.IOException;
@@ -26,9 +27,16 @@ public class AppModel {
         ).build();
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        Joke joke = objectMapper.readValue(response.body(), Joke.class);
+        return objectMapper.readValue(response.body(), Joke.class);
+    }
 
-        return joke;
+    public Fact getCatFact() throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder(
+                URI.create("https://catfact.ninja/fact")
+        ).build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return objectMapper.readValue(response.body(), Fact.class);
     }
 
 }

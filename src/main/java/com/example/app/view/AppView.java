@@ -1,7 +1,5 @@
 package com.example.app.view;
 
-import com.example.app.util.Constants;
-
 import java.util.Scanner;
 
 public class AppView {

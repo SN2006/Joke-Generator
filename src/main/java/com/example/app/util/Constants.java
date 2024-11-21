@@ -15,12 +15,23 @@ public class Constants {
             -----------------------------
             """;
 
+    public static final String FACT_MENU =
+            """
+            
+            -----------------------------
+            Select which type of fact you want to generate:
+            1 - About cats
+            0 - Return
+            -----------------------------
+            """;
+
     public static final String SELECT_MENU_MENU =
             """
             
             ------------------------------------
             Select what do you want to generate:
             1 - Jokes
+            2 - Facts
             0 - Close console
             ------------------------------------
             """;
