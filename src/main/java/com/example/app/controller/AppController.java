@@ -21,10 +21,10 @@ public class AppController {
         while(isRunning){
             int commandId = view.getInt(Constants.SELECT_MENU_MENU);
             switch (commandId){
-                case 4 -> jokesGeneratorMenu();
-                case 5 -> factsGeneratorMenu();
-                case 10 -> historyMenu();
-                case 3 -> isRunning = false;
+                case 1 -> jokesGeneratorMenu();
+                case 2 -> factsGeneratorMenu();
+                case 3 -> historyMenu();
+                case 0 -> isRunning = false;
                 default -> view.display(Constants.INVALID_COMMAND_MSG);
             }
         }
@@ -35,8 +35,8 @@ public class AppController {
         while (isRunning){
             int commandId = view.getInt(Constants.JOKE_HISTORY_MENU);
             switch (commandId){
-                case 0 -> view.display(model.getJokes());
-                case 101 -> isRunning = false;
+                case 1 -> view.display(model.getJokes());
+                case 0 -> isRunning = false;
                 default -> view.display(Constants.INVALID_COMMAND_MSG);
             }
         }
@@ -67,11 +67,11 @@ public class AppController {
             int commandId = view.getInt(Constants.JOKE_MENU);
             try{
                 switch (commandId){
-                    case 4 ->
+                    case 1 ->
                             view.display(model
                                     .getJokeByCategory(Constants.PROGRAMMING_CATEGORY)
                                     .toString());
-                    case 23 ->
+                    case 2 ->
                         view.display(model
                                 .getJokeByCategory(Constants.DARK_CATEGORY)
                                 .toString());
@@ -79,11 +79,11 @@ public class AppController {
                             view.display(model
                                     .getJokeByCategory(Constants.PUN_CATEGORY)
                                     .toString());
-                    case 24 ->
+                    case 4 ->
                             view.display(model
                                     .getJokeByCategory(Constants.MISCELLANEOUS_CATEGORY)
                                     .toString());
-                    case -14 -> isRunning = false;
+                    case 0 -> isRunning = false;
                     default -> view.display(Constants.INVALID_COMMAND_MSG);
                 }
             }catch (IOException | InterruptedException e){
