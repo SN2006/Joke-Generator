@@ -24,7 +24,12 @@ public class AppController {
                 switch (commandId){
                     case 1 ->
                             view.display(model
-                                    .getJokeByCategory(Constants.PROGRAMMING_CATEGORY).toString());
+                                    .getJokeByCategory(Constants.PROGRAMMING_CATEGORY)
+                                    .toString());
+                    case 2 ->
+                        view.display(model
+                                .getJokeByCategory(Constants.DARK_CATEGORY)
+                                .toString());
                     case 0 -> isRunning = false;
                     default -> view.display(Constants.INVALID_COMMAND_MSG);
                 }
