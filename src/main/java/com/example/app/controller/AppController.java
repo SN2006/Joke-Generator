@@ -18,8 +18,20 @@ public class AppController {
 
     public void run(){
         boolean isRunning = true;
+        while(isRunning){
+            int commandId = view.getInt(Constants.SELECT_MENU_MENU);
+            switch (commandId){
+                case 1 -> jokesGeneratorMenu();
+                case 0 -> isRunning = false;
+                default -> view.display(Constants.INVALID_COMMAND_MSG);
+            }
+        }
+    }
+
+    private void jokesGeneratorMenu(){
+        boolean isRunning = true;
         while (isRunning){
-            int commandId = view.getChoose();
+            int commandId = view.getInt(Constants.JOKE_MENU);
             try{
                 switch (commandId){
                     case 1 ->

@@ -2,7 +2,7 @@ package com.example.app.util;
 
 public class Constants {
 
-    public static final String MENU =
+    public static final String JOKE_MENU =
             """
             
             -----------------------------
@@ -11,8 +11,18 @@ public class Constants {
             2 - Dark
             3 - Pun
             4 - Miscellaneous
-            0 - Close console
+            0 - Return
             -----------------------------
+            """;
+
+    public static final String SELECT_MENU_MENU =
+            """
+            
+            ------------------------------------
+            Select what do you want to generate:
+            1 - Jokes
+            0 - Close console
+            ------------------------------------
             """;
 
     public static final String INVALID_COMMAND_MSG = "Invalid command !!!";

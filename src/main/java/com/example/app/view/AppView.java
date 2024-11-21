@@ -12,8 +12,8 @@ public class AppView {
         System.out.println(message);
     }
 
-    public int getChoose(){
-        System.out.println(Constants.MENU);
+    public int getInt(String message){
+        System.out.print(message);
         return IN.nextInt();
     }
 
